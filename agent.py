@@ -194,7 +194,6 @@ class BabyAGI(Chain, BaseModel):
 
     def print_task_result(self, result: str):
         print("\033[93m\033[1m" + "\n*****TASK RESULT*****\n" + "\033[0m\033[0m")
-        print(result)
         return(result)
 
     @property
@@ -311,7 +310,7 @@ OBJECTIVE = user_input
 llm = OpenAI(temperature=0)
 # Logging of LLMChains
 verbose = False
-# If None, will keep on going forever
+# If None, will keep on going forever. Customize the number of loops you want it to go through.
 max_iterations: Optional[int] = 2
 baby_agi = BabyAGI.from_llm(
     llm=llm, vectorstore=vectorstore, verbose=verbose, max_iterations=max_iterations
