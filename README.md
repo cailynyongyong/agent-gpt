@@ -1,23 +1,27 @@
 ## Overview
 
 This is a BabyAGI + SerpAPI tool embedded site that is hosted by Streamlit.
-The Agent creates a Todo list to complete tasks that are required by the user.
+The Agent creates a Todo list to complete tasks that are required by the user. It uses SerpAPI to search Google.
 
 ---
 
 ## To run
 
+Make sure to fill in the API keys for OpenAI and SerpAPI.
+
 ```
 python -m venv venv
 source venv/bin/activate
 pip install langchain
+pip install openai
 pip install google-search-results
 pip install faiss-cpu > /dev/null
 pip install tiktoken
 pip install streamlit
-streamlit run BabyAGI.py
+streamlit run agent.py
 
 ```
+If streamlit is not working, checkout their [installation page](https://docs.streamlit.io/library/get-started/installation)
 
 ---
 
